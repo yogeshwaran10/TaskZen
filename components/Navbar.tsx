@@ -22,9 +22,9 @@ const Navbar = () => {
       <div className="flex justify-between w-[90%] max-w-[1450px] mx-auto">
         <Link
           href={"/"}
-          className="flex gap-1 items-center text-2xl font-bold uppercase"
+          className="flex gap-1 items-center text-2xl font-bold "
         >
-          <h1>My Kanban</h1>
+          <h1>TaskZen</h1>
           <PiKanban />
         </Link>
 
