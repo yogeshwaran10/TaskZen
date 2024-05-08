@@ -7,12 +7,19 @@ import Navbar from '@/components/Navbar';
 import ToasterContext from '@/context/ToasterContext';
 import { Theme } from '@/providers/ThemeProvider';
 
+// Define the Metadata type
+interface Metadata {
+  title: string;
+  description: string;
+}
+
 const ubuntu = Ubuntu({
   subsets: ['latin'],
   weight: ['300', '400', '500', '700'],
 });
 
-export const metadata: Metadata = {
+// Define the metadata object
+const metadata: Metadata = {
   title: 'My Kanban',
   description: 'Personal Kanban Board',
 };
