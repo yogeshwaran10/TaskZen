@@ -1,19 +1,20 @@
-import type { Metadata } from "next";
-import { Ubuntu } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
-import ToasterContext from "@/context/ToasterContext";
-import { Theme } from "@/providers/ThemeProvider";
+// layout.tsx
+import Head from 'next/head';
+import { Ubuntu } from 'next/font/google';
+import { ClerkProvider } from '@clerk/nextjs';
+import './globals.css';
+import Navbar from '@/components/Navbar';
+import ToasterContext from '@/context/ToasterContext';
+import { Theme } from '@/providers/ThemeProvider';
 
 const ubuntu = Ubuntu({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '700'],
 });
 
 export const metadata: Metadata = {
-  title: "My Kanban",
-  description: "Personal Kanban Board",
+  title: 'My Kanban',
+  description: 'Personal Kanban Board',
 };
 
 export default function RootLayout({
@@ -23,11 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <html lang="en">
-        <body
-          className={`${ubuntu.className} dark:bg-gray-900`}
-          suppressHydrationWarning
-        >
+        <body className={`${ubuntu.className} dark:bg-gray-900`} suppressHydrationWarning>
           <Theme>
             <ToasterContext />
             <Navbar />
